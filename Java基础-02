@@ -1,0 +1,196 @@
+package com.Demo;
+
+public class Base_2 {
+    public static void main(String[] args) {
+        /*
+        1.关键字
+
+        2.标识符
+        2.1 标识符规则
+        2.1.1 由符号数字字母构成
+        2.1.2 符号_和$
+        2.1.3 数字不可在开头
+        2.1.4 字母不为关键字
+
+        2.2 标识符规范
+        2.2.1 包名全小写 com.taobao
+        2.2.2 常量全大写 MAX_VALUE
+        2.2.3 类与接口开头大写 UserName
+        2.2.4 方法与变量驼峰命名 userName
+         */
+
+        /*数据类型
+        1.基本数据类型
+        1.1 整型(整数默认为int)
+        1.1.1 byte 1B
+        1.1.2 short 2B
+        1.1.3 int 4B
+        1.1.4 long 8B
+
+        1.2 浮点型(浮点数默认为double)
+        1.2.1 float 4B
+        1.2.2 double 8B
+
+        1.3 字符型 char 2B
+
+        1.4 布尔型 boolean 1B
+
+        2.引用数据类型
+        2.1 String
+         */
+        byte a = 127;
+        short b = 128;
+        int c = 128;
+        long d = 128L;
+        float e = 128F;
+        double f = 128;
+        char g = 'a';
+        char h = '\u0030';
+        char i = '\\';
+        boolean j = true;
+        char k = 48;
+        char l = 65;
+        char m = 97;
+        String s1 = "";
+        String s2 = "hello world";
+        String s3 = "hello world" + "hello world";
+        //连接运算必须要有字符串参与
+        String s4 = s1 + a;
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(d);
+        System.out.println(e);
+        System.out.println(f);
+        System.out.println(g);
+        System.out.println(h);
+        System.out.println(i);
+        System.out.println(j);
+        System.out.println(k);
+        System.out.println(l);
+        System.out.println(m);
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
+        System.out.println(s4);
+
+        /*数据转换
+        1.自动转换(小变大)
+        1.1 赋值
+        byte → short → int → long → float → double
+        char → int → long → float → double
+
+        1.2 运算
+        byte(short/char) + byte(short/char) → int → long → float → double → String
+
+        2.强制转换(大变小)
+        double d = 10.7;
+        int i = (int) d;            // 10 (小数部分丢失)
+
+        int i3 = 128;
+        byte b2 = (byte) i3;        // -128 (溢出绕回)
+
+        // long→int
+        long l = 10000000000L;
+        int i5 = (int) l;           // 可能溢出
+         */
+
+        /*常用进制
+        1.二进制 0b开头
+        正数三码合一
+        负数由补码减1得到反码，再由反码取反得到正码
+        2.八进制 0开头
+        3.十六进制 0x开头
+         */
+
+        /*运算符
+// 1. 算术运算符
+int a = 10, b = 3;
+int sum = a + b;          // 加法
+int diff = a - b;         // 减法
+int product = a * b;      // 乘法
+int quotient = a / b;     // 除法（整数截断）
+int remainder = a % b;    // 取余
+double div = 10.0 / 3;    // 浮点除法
+int pos = +5;             // 正号
+int neg = -5;             // 负号
+String str = "Hello" + "World";  // 字符串连接
+
+// 2. 赋值运算符
+int x = 5;                // 基本赋值
+x += 3;                   // x = x + 3
+x -= 2;                   // x = x - 2
+x *= 4;                   // x = x * 4
+x /= 2;                   // x = x / 2
+x %= 3;                   // x = x % 3
+x &= 5;                   // x = x & 5
+x |= 3;                   // x = x | 3
+x ^= 2;                   // x = x ^ 2
+x <<= 1;                  // x = x << 1
+x >>= 1;                  // x = x >> 1
+x >>>= 1;                 // x = x >>> 1
+
+// 3. 关系运算符
+int p = 5, q = 8;
+boolean eq = p == q;      // 等于
+boolean ne = p != q;      // 不等于
+boolean gt = p > q;       // 大于
+boolean lt = p < q;       // 小于
+boolean ge = p >= q;      // 大于等于
+boolean le = p <= q;      // 小于等于
+
+// 4. 逻辑运算符
+boolean t = true, f = false;
+boolean andShort = t && f;    // 短路与
+boolean orShort = t || f;      // 短路或
+boolean not = !t;              // 非
+boolean and = t & f;           // 非短路与
+boolean or = t | f;            // 非短路或
+boolean xor = t ^ f;           // 异或
+
+// 5. 位运算符
+int m = 5;    // 0101
+int n = 3;    // 0011
+int bitAnd = m & n;      // 0001 = 1  位与
+int bitOr = m | n;       // 0111 = 7  位或
+int bitXor = m ^ n;      // 0110 = 6  异或
+int bitNot = ~m;         // 取反
+int leftShift = m << 2;  // 010100 = 20 左移
+int rightShift = m >> 1; // 0010 = 2 右移
+int unsignedRightShift = m >>> 1; // 无符号右移
+
+// 6. 条件运算符（三元）
+int age = 18;
+String status = age >= 18 ? "成年" : "未成年";
+int max = p > q ? p : q;
+int min = p < q ? p : q;
+
+// 7. 自增自减
+int i = 5;
+int preInc = ++i;        // 先自增后使用，i=6, preInc=6
+int postInc = i++;       // 先使用后自增，i=7, postInc=6
+int preDec = --i;        // 先自减后使用，i=6, preDec=6
+int postDec = i--;       // 先使用后自减，i=5, postDec=6
+
+// 8. instanceof
+String str2 = "Hello";
+boolean isString = str2 instanceof String;     // true
+boolean isObject = str2 instanceof Object;     // true
+Integer num = 123;
+boolean isInteger = num instanceof Integer;    // true
+         */
+
+        /*面试
+        1.& 和 && 的区别
+        &&是短路逻辑与（左边false则右边不执行，主要用于条件判断），&是非短路逻辑与（两边都执行）
+        2.char可以存储一个中文字符，因为char使用了unicode字符集，包含中文字符
+        3.boolean占几个字节？
+        “boolean类型占几个字节取决于JVM实现和变量存储位置：”
+        单个boolean变量：编译期映射为int，占4字节（栈帧槽位32位）
+        boolean数组：每个元素占1字节（byte数组实现）
+        对象中的boolean字段：通常占1字节（但可能因内存对齐变为4字节）
+        4.为什么0.1+0.3不等于0.4？
+        因为计算机使用二进制浮点数（IEEE 754标准）表示小数，而0.1和0.3在二进制中是无限循环小数，存储时只能近似，导致累加误差。
+         */
+    }
+}
