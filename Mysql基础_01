@@ -1,0 +1,71 @@
+DB是一个有组织的数据集合
+DBMS是管理数据库的软件系统
+sql是操作数据库的结构化查询语言
+MySQL是一个开源的关系数据库管理系统
+关系数据库有哪些
+oracle mysql sql sever DB2 postgresql
+非关系数据库有哪些
+回答要点：
+6大类：
+1. 键值：Redis、Memcached
+2. 文档：MongoDB、Elasticsearch
+3. 列族：HBase、Cassandra
+4. 图：Neo4j
+5. 时序：InfluxDB
+6. 向量：Milvus
+
+表之间的关联关系
+一对一
+一对多
+多对多
+自我引用
+
+-- * 是通配符，代表所有列
+SELECT * FROM student;
+
+-- 结果会返回所有列：id, name, age, class
+-- id | name | age | class
+-- 1  | 张三 | 18  | 1班
+-- 2  | 李四 | 19  | 1班
+-- 3  | 王五 | 18  | 2班
+
+-- 只查询需要的列，列名用逗号分隔
+SELECT name, age FROM student;
+
+-- 结果只包含name和age两列
+-- name | age
+-- 张三 | 18
+-- 李四 | 19
+-- 王五 | 18
+
+-- 不查询表，直接返回常量值
+SELECT 'Hello World';
+
+-- 结果：
+-- Hello World
+
+-- 可以查询多个常量
+SELECT 'Hello', 'World', 100;
+
+-- 结果：
+-- Hello | World | 100
+
+-- ✅ 推荐：不加引号
+SELECT user_name 用户名 FROM users;
+
+-- ✅ 推荐：用AS，可读性好
+SELECT user_name AS userName FROM users;
+SELECT create_time AS createTime FROM users;
+
+-- ✅ 推荐：双引号
+SELECT user_name AS "user name" FROM users;
+
+-- ✅ 推荐：双引号
+SELECT salary AS "工资(元/月)" FROM employee;     -- 括号
+SELECT status AS "order-status" FROM orders;      -- 连字符
+SELECT phone AS "手机#号" FROM users;              -- #号
+SELECT email AS "email@address" FROM users;        -- @符号
+
+-- ✅ 推荐：双引号
+SELECT name AS "select" FROM users;
+SELECT count AS "from" FROM users;
