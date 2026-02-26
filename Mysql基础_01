@@ -69,3 +69,13 @@ SELECT email AS "email@address" FROM users;        -- @符号
 -- ✅ 推荐：双引号
 SELECT name AS "select" FROM users;
 SELECT count AS "from" FROM users;
+
+-- 去重查询
+SELECT DISTINCT age
+FROM users;
+
+-- where 用法
+SELECT age
+FROM users
+WHERE age < 18;
+
