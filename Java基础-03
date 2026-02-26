@@ -1,0 +1,67 @@
+//Scaner类常用用法
+Scanner scanner = new Scanner(System.in);
+System.out.print("请输入姓名：");
+String name = scanner.next(); // 读取字符串（遇到空格结束）
+
+System.out.print("请输入年龄：");
+int age = scanner.nextInt(); // 读取整数
+
+System.out.print("请输入收入：");
+double money = scanner.nextDouble(); // 读取小数
+
+//Random类常用用法
+Random r = new Random();
+
+//break continue
+前者用于结束整个循环，后者用于跳过本次循环
+
+//if...else	switch，什么时候用哪个？
+判断类型	判断范围（大于、小于）或布尔表达式。	判断具体的值（byte, short, int, char, String, 枚举）。
+结构复杂度	可以处理非常复杂的逻辑条件（如 &&、|| 组合）。	结构清晰，但条件必须是常量值，不能是范围。
+执行效率	对于复杂条件效率高，但对于多个固定值的判断，可能不如 switch 直观。	对于多个固定值的判断，JDK对 switch 有优化（如跳转表），结构更清晰。
+用 if ： 判断一个范围（例如：if(score >= 60)），或者判断一个布尔值（例如：if(flag == true)）。
+用 switch ： 判断一个变量等于几个固定的、离散的常量值
+
+//Switch语句忘写break会发生什么?
+会发生 “case穿透” 现象。
+
+//java支持哪些循环，有什么区别
+public class FourLoopsDemo {
+    public static void main(String[] args) {
+        
+        // 1. for循环 - 适用于知道具体循环次数
+        System.out.println("=== for循环：循环5次 ===");
+        for(int i = 0; i < 5; i++) {
+            System.out.println("第" + (i+1) + "次执行循环");
+        }
+        // 执行过程：初始化 i=0 → 判断 i<5 → 执行循环体 → i++ → 判断 i<5 → 循环...
+        
+        System.out.println("\n=== while循环：循环5次 ===");
+        // 2. while循环 - 适用于不知道次数，只知道条件
+        int j = 0;
+        while(j < 5) {
+            System.out.println("第" + (j+1) + "次执行循环");
+            j++;
+        }
+        // 执行过程：先判断条件 → 条件true才执行 → 直到条件false停止
+        
+        System.out.println("\n=== do...while循环：循环5次 ===");
+        // 3. do...while循环 - 适用于至少执行一次
+        int k = 0;
+        do {
+            System.out.println("第" + (k+1) + "次执行循环");
+            k++;
+        } while(k < 5);
+        // 执行过程：先执行一次循环体 → 再判断条件 → 条件true继续执行
+        
+        System.out.println("\n=== 增强for循环：遍历数组 ===");
+        // 4. 增强for循环 - 适用于遍历数组/集合所有元素
+        int[] numbers = {1, 2, 3, 4, 5};
+        int count = 0;
+        for(int num : numbers) {
+            count++;
+            System.out.println("第" + count + "次执行循环，当前元素值：" + num);
+        }
+        // 执行过程：自动取出数组每个元素 → 执行循环体 → 直到取完所有元素
+    }
+}
